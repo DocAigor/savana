@@ -12,8 +12,10 @@ namespace Prova
         static void Main(string[] args)
         {
             var reader = new FileReader();
-            var listaAnimali = reader.Read(path).Select(x => SavanaFactory.Build(x));
-            
+            var listaAnimali = reader.Read(path).Select(x => SavanaFactory.Build(x)).ToList();
+            var savana = new Savana.Model.Savana(listaAnimali);
+
+
         }
     }
 }
